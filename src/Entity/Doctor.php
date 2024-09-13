@@ -40,11 +40,11 @@ class Doctor
     private ?string $zip = null;
 
     #[Assert\Length([
-        'min' => 10,
-        'max' => 10,
-        'minMessage' => 'Minimum {{ limit }} characters',
-        'maxMessage' => 'Maximum {{ limit }} characters'
+        'min' => 10, 'max' => 10,
+        'minMessage' => 'Minimum {{ limit }} characters', 'maxMessage' => 'Maximum {{ limit }} characters'
     ])]
+    #[Assert\Regex('/^[0-9]${10}/',)]
+
     #[ORM\Column(length: 12, nullable: true)]
     private ?string $phone = null;
 
