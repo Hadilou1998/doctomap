@@ -20,13 +20,10 @@ class CityController extends AbstractController
         ]);
     }
 
-    #[Route('/form', name: 'app_form')]
-    public function doctorForm(Request $request, DoctorRepository $dr, EntityManagerInterface $em): JsonResponse
+    /*#[Route('/form', name: 'app_form')]
+    public function doctorForm(Request $request, DoctorRepository $dr, EntityManagerInterface $em): Response
     {
         $doctor = new Doctor();
         $form = $this->createFormBuilder($doctor);
-        $form->add('firstname', TextType::class);
-        $form->add('lastname', TextType::class);
-        $form->add('speciality', TextType::class);
-    }
+    }*/
 }
