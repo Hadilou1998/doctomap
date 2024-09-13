@@ -6,6 +6,7 @@ use ApiPlatform\Metadata\GetCollection;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\DoctorRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: DoctorRepository::class)]
 #[ApiResource(
@@ -38,6 +39,12 @@ class Doctor
     #[ORM\Column(length: 5)]
     private ?string $zip = null;
 
+    #[Assert\Length([
+        'min' => 10,
+        'max' => 10,
+        'minMessage' => 'Minimum {{ limit }} characters',
+        'maxMessage' => 'Maximum {{ limit }} characters'
+    ])]
     #[ORM\Column(length: 12, nullable: true)]
     private ?string $phone = null;
 
