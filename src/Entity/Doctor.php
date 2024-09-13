@@ -7,7 +7,7 @@ use App\Repository\DoctorRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: DoctorRepository::class)]
-#[ApiResource]
+#[ApiResource] // Ajout de l'annotation ApiResource pour exposer l'entité en tant que ressource RESTful
 class Doctor
 {
     #[ORM\Id]
